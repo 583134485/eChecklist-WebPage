@@ -1,0 +1,73 @@
+.outerHead{
+    width: 100%;
+    padding-top: 30px;
+    overflow: hidden;
+    padding-right: 6%;
+}
+.buttonBox{
+    float: right; 
+    margin-right: 5%
+} 
+.errorMess{
+    width: 50%;
+    margin-left: 10%;
+}  
+.mainBody{
+    margin-top: 30px;    
+}
+
+.listName{
+    background: #fff;
+}
+.listName p{
+    padding-left: 18px;
+}
+#selectBtn{
+    width: 220px!important;
+    text-align: left;
+    
+}
+.caret{
+    display: block;
+   float: right;
+   margin-top: 8px;
+
+}
+.bo{
+    width: 80%;
+    margin-top: 2%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 0 auto;
+}
+.formSt{
+    /* width: 40%; */
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.listName p:hover{
+    background: #aaa;
+
+}
+.list-group{
+    margin-bottom: 0px!important;
+    max-height: 163px;
+    overflow: auto;
+}
+.dropdown-menu{
+    width:220px;
+}
+
+.successColor ,.errorColor{
+   margin-left: 10%;
+}
+.dropdown-menu{
+margin: 0!important;
+padding: 0!important;
+}
+.btnSave{
+    padding-left: 17px;
+    padding-right: 17px;
+}

@@ -1,0 +1,53 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    {{status}}  Instance
+  </h1>
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="outerHead">
+    <div class="buttonBox">
+      <button type="button" class="btnSaveAndCancel btn btn-danger" (click)="toListPage()">Cancel</button>
+      <!-- {{nameInput=='Select The Template'?'addInstance()':'updateInstance()'}} -->
+      <button type="button" [disabled]=" instanceForm.invalid || !onceSave" (click)="addInstance()" class="btnSave btn btn-success">Save</button>
+    </div>
+    <div class="messBox">
+      <div class="errorColor" hidden=true [hidden]="!instanceForm.get('name').errors?.maxLength || instanceForm.get('name').pristine">{{instanceNameLengthMessage}}</div>
+      <div class="errorColor" hidden=true [hidden]="!instanceForm.get('name').errors?.required || instanceForm.get('name').pristine">{{emptyInstanceNameMessage}}</div>
+      <div class="errorColor" hidden=true [hidden]="instanceForm.get('template').valid || instanceForm.get('template').pristine">{{templateNameInvaildMessage}}</div>
+      <div class="errorColor" *ngIf="!errInstanceName">{{unvalidInputMessage}}</div>
+      <div class="errorColor" *ngIf="duplicatedInstanceName">{{duplicateMessage}}</div>
+      <div class="successColor"  *ngIf="show">{{successMessage}}</div>
+    </div>
+  </div>
+   <div class="mainBody">
+    <div class="bo">
+      <form [formGroup]="instanceForm" class="formSt">
+        <div class="form-group">
+          <input style="width:220px;border-radius: 3px;" autocomplete="off" [(ngModel)]="instanceName" type="text" id="instanceInput" class="form-control"
+            id="name" placeholder="Instance Name" [maxLength]="(100)" required formControlName="name" value="{{name}}" (keyup)="checkInstanceName($event)" >
+        </div>
+        <!-- <input type="text" class="form-control" id="name" placeholder="Template Name" formControlName="id" [(ngModel)]="temName"
+              name="first" autocomplete="off" value="{{id}}" style="display:none" > -->
+        <div class="btn-group">
+          <button id="selectBtn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >{{nameInput}}
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu form-group" role="menu">
+            <input type="text"  class="form-control" id="selectInput" placeholder="Template Name" formControlName="template1" [(ngModel)]="temName"
+              name="first" autocomplete="off">
+            <div id="mydiv"  class="list-group">
+              <div href="#" id="templateName"  class="cccc list-group-item list-group-item-action" *ngFor="let name of nameSet | tempalteName:temName" (click)="upTemp($event)">
+                {{name}}
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+<!-- /.content -->

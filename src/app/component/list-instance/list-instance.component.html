@@ -1,0 +1,42 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+     Instance
+   </h1>
+  
+
+
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <!-- <div>here is hint message</div> -->
+  <button type="button" (click)="toAddInstance()" class="btnPosition btn btn-danger">Create</button>
+  <!-- instance team -->
+  <table id="showTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Template</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instance of resultBean.Data">
+      
+        <td ><p id="instanceNameTd" >{{instance.Name}}</p></td>
+        <!-- <td>{{instance.Type}}</td> -->
+        <td>{{instance.Template}}</td>
+        <td>
+          <span id="pencil" class="glyphicon glyphicon-pencil" (click)="updataInstance(instance.Id,instance.Name,instance.Type,instance.Template,$event)"></span>
+          <span id="trash" class="glyphicon glyphicon-trash" [@canDelete]="triggerMap.get(instance.Id)"
+          #delete (click)="triggerState(instance.Name,instance.Template,instance.Id,$event)"></span>
+          
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+<!-- /.content -->

@@ -1,0 +1,53 @@
+<aside class="main-sidebar skin-black" id="mainSide">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="menu" style="font-family:Comic Sans MS;font-size:14px;"></span>
+      </a>
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+      
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="../../../../assets/img/aa.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p class="username">Alexander Pierce</p>
+        <!-- Status -->
+        <a href="#" class="userstatus"><em class="fa fa-circle text-success"></em> online</a>
+      </div>
+    </div>
+
+    <!-- search form (Optional) -->
+    <!-- <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><em class="fa fa-search"></em>
+              </button>
+            </span>
+      </div>
+    </form> -->
+    <!-- /.search form -->
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      
+      <!-- Optionally, you can add icons to the links -->
+      <li routerLink="/app-list-instance" (click)="asideChange(1)" class="{{asideChangeId==1?'active':''}}"><a ><em class="fa fa-link"></em> <span class="instanceList">Instance</span></a></li>
+      <li routerLink="/app-workflow-list" (click)="asideChange(2)" class="{{asideChangeId==2?'active':''}}"><a ><em class="fa fa-link"></em> <span class="instanceList">Template Workflow</span></a></li>
+      <!-- <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>多级菜单</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#">Link in level 2</a></li>
+          <li><a href="#">Link in level 2</a></li>
+        </ul>
+      </li> -->
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

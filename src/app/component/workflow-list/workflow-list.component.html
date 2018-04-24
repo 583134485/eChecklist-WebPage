@@ -1,0 +1,44 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Template Workflow
+  </h1>
+</section>
+
+
+<!-- Main content -->
+
+<!-- <div>here is hint message</div> -->
+    
+<!-- instance team -->
+<!-- <table id="showTable" class="table table-striped"> -->
+<section class="content">
+   <!-- <div>here is hint message</div> -->
+   <button type="button" (click)="toAddWorkflowSteps()" class="btnPosition btn btn-danger">Create</button>
+  <!-- instance team -->
+  <table id="showTable" class="table table-striped">
+     <thead>
+      <tr>
+        
+        <th>Workflow Name</th>
+        <th>Modify Date</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let workflow of resultBean.Data;let i=index">
+        <td>
+          <p>{{workflow.Name}}</p>
+        </td>
+        <td>{{workflow.Modifiedtime}}</td>
+        <td>
+          <span id="pencil" class="glyphicon glyphicon-pencil" (click)="updateWorkflow(workflow.Id,workflow.Name)"></span>
+          <span id="trash" class="glyphicon glyphicon-trash"  [@canDelete]="triggerMap.get(workflow.Id)"
+          #delete (click)="triggerState(workflow.Id,workflow.Name,$event)" ></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<!-- /.content -->

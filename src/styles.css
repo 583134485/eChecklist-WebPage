@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+#pencil{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px;
+}
+.table{
+    margin-top: 40px;
+}
+.table tr,.table td,.table th{
+   border: 1px solid #C7C7C7; 
+}
+.table tr,.table td,.table th{
+    border-bottom: 1px solid #C7C7C7!important;
+    border-top: 1px solid #C7C7C7!important;
+
+}
+.btnPosition{
+    float: right!important;
+    margin-right: 5%;
+    margin-bottom: 20px;
+}
+.btnPosition {
+    margin-right: 0px!important;
+   
+}
+#thTitle{
+    background: #D3D3D3;
+}
+#trash{
+    display: inline-block;
+    margin-left: 15px;
+    padding: 2px;
+    border-radius: 3px;
+}
+#instanceNameTd{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width: 50px;    
+
+}
+#showTable tr td{
+    padding: 3px 0px 0px 8px;
+}
+#showTable tr td p{
+    margin: 0px 0px 8px;
+}
+#showTable tr td:nth-child(3){
+    width: 100px;
+}
+#saveBtn,#backBtn{
+    position: absolute;
+    top: 25.5%;
+}
+#saveBtn{
+    right: 15px;
+}
+#backBtn{
+    right: 80px;
+}
+.errorColor{
+    color:#fff;
+    background:rgba(250, 64, 64, 0.5);
+    padding: 5px 20px; 
+    width: 50%;
+    border-radius: 3px;
+}
+.successColor{
+    color:#fff;
+    background:rgba(2, 202, 52, 0.5);
+    padding: 5px 20px; 
+    width: 50%;
+    border-radius: 3px;
+}
+.messBox{
+    height: 40px;
+}
+.td-center{
+    display:table-cell; 
+    vertical-align:middle!important;
+    text-align:center
+}
+.overflowhidden{
+    overflow: hidden!important;
+    min-height: 0px!important;
+}

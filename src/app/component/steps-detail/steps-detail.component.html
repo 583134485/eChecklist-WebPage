@@ -1,0 +1,47 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Steps Detail
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <!-- <div>here is hint message</div> -->
+  <div class="messBox">
+    <div class="errorColor" *ngIf="ifempty">{{emptyInstanceNameMessage}}</div>
+    <div class="errorColor" *ngIf="!ifstepNameVaild">{{unvalidInputMessage}}</div>
+    <div class="successColor" *ngIf="ifSaveSuccess">{{successMessage}}</div>
+    <div class="errorColor" *ngIf="duplicatedWorkFlowName">{{duplicateMessage}}</div>
+  </div>
+  <input style="width:220px;border-radius: 3px; " autocomplete="off" type="text" class="form-control" id="name" placeholder="Step Name"
+    [(ngModel)]="stepName" (keyup)="checkInstanceName($event)">
+  <div *ngIf="ifWorkflowId">
+    <button type="button" (click)="addInstanceDetail()" class="btnPosition btn btn-danger" style="margin-bottom:20px;margin-top:30px">Add Instance</button>
+    <!-- instance team -->
+    <table id="showTable" class="table table-striped">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Instance Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let instance of resultBean.Data; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{instance.Name}}</td>
+          <td>
+            <span id="pencil" class="glyphicon glyphicon-pencil" (click)="toUpdateInstance(instance.Id)"></span>
+            <span id="trash" class="glyphicon glyphicon-trash" [@canDelete]="triggerMap.get(instance.Id)" #delete (click)="triggerState(instance.Id,$event)"></span>
+
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <app-back-btn (click)="toBack()"></app-back-btn>
+  <button type="button" [disabled]="ifempty || !onceSave || ifFirstTimeInto " id="saveBtn" (click)="addStepOrUpdate()" class="btnSaveAndCancel btn btn-success">Save</button>
+</section>
+<!-- /.content -->

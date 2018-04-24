@@ -1,0 +1,18 @@
+
+.logo-lg img{
+    width: 53%;
+    height: 50%;
+}
+#logo{
+    background-color: #000!important;
+    border: none;
+}
+#navBlack{
+    background: #000;
+}
+#drop:hover{
+    background: #999!important;
+}
+#drop:focus{
+    background: #999!important;
+}

@@ -1,0 +1,85 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        instance Detail
+    </h1>
+</section>
+
+<!-- Main content  -->
+
+<section class="content">
+    <div class="messBox">
+
+        <div [@animation1] [ngClass]="tipClass" *ngIf="showTipFlag">{{tipMessage}}</div>
+
+    </div>
+    <div class="btn-group margin-bottom30">
+        <button id="selectBtn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{instanceName2}}
+            <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu form-group" role="menu">
+            <input type="text" class="form-control" id="selectInput" placeholder="Instance Name" [(ngModel)]="instanceName" name="first"
+                autocomplete="off">
+            <div id="mydiv" class="list-group">
+                <div href="#" id="templateName" class=" list-group-item list-group-item-action" *ngFor="let name of instanceNames | tempalteName:instanceName"
+                    (click)="selectTemplate($event)">
+                    {{name}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="div30 form-group" role="menu">
+        <input type="text" class="form-control " id="selectInput" placeholder="Instance Name" [(ngModel)]="instanceName" name="first"
+            autocomplete="off" (keyup)="this.showList=true">
+        <div id="mydiv" class="list-group dropDownDiv" *ngIf="showList">
+            <div  href="#" id="templateName" class=" list-group-item list-group-item-action overflowhidden" *ngFor="let name of instanceNames | tempalteName:instanceName"
+                (click)="selectTemplate($event)">
+                {{name}}
+            </div>
+        </div>
+        
+      
+    </div> -->
+    <button type="button" style="margin-bottom: 31px;" class="btn btn-primary left20" (click)="changeLanguage()" >{{language}}</button>
+    <div>
+        <!-- <div><button type="button" class="btn btn-primary">EN</button>
+        <button type="button" class="btn btn-info">CN</button>
+         </div> -->
+
+        <div id="mainTable">
+            <!-- <table id="tableMain" class="table table-striped">
+              
+                    <tr>
+                            <td>cc</td>
+                            <td>c</td>
+                            <td>cc</td>
+                    </tr>
+              
+          
+                    <tr>
+                        <td>aa</td>
+                        <td>aa</td>
+                        <td>aa</td>
+                    </tr>
+                    <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                        </tr>
+                
+
+
+            </table> -->
+
+        </div>
+
+
+    </div>
+
+</section>
+<app-back-btn (click)='historyBack()'></app-back-btn>
+<button type="button" [disabled]="" id="saveBtn" (click)="addInstanceToStep()" class="btnSaveAndCancel btn btn-success">Save</button>
+
+<!-- /.content -->

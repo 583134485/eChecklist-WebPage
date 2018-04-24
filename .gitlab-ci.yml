@@ -1,0 +1,17 @@
+stages:
+    - build
+    - test
+frontend-build:
+    tags:
+        - dev-front
+    stage: build
+    script:
+        - cd C:\CI-total
+        - frontend-build.bat
+frontend-test:
+    tags:
+        - dev-front
+    stage: test
+    script: 
+        - cd C:\CI-total
+        - frontend-test.bat
