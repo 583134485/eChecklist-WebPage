@@ -1,1 +1,1 @@
-new project
+angular demo project for learning
